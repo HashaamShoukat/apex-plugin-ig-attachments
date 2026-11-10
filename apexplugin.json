@@ -1,0 +1,34 @@
+{
+  "name" : "IG Attachments",
+  "version" : "1.1.0",
+  "description" : "Several files per Interactive Grid row, also on new rows that are not saved yet. Files upload in parts while the panel is open and are linked to the row in the same transaction that saves it; revert the row and nothing changes. Per-file extra fields, previews, limits checked again on the server, storage in the plug-in's table or your own, and authorization taken from the grid itself.",
+  "keywords" : ["interactive grid", "attachments", "file upload", "files", "item", "documents", "receipts"],
+  "homepage" : "https://github.com/HashaamShoukat/apex-plugin-ig-attachments",
+  "bugs" : {
+    "url" : "https://github.com/HashaamShoukat/apex-plugin-ig-attachments/issues",
+    "email" : "hashaam.shoukat@gmail.com"
+  },
+  "license" : "MIT",
+  "commercial" : "No",
+  "author" : {
+    "name" : "Hashaam Shoukat",
+    "email" : "hashaam.shoukat@gmail.com",
+    "url" : "https://github.com/HashaamShoukat"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/HashaamShoukat/apex-plugin-ig-attachments.git"
+  },
+  "oracle" : {
+    "versions" : ["19.0.0", "21.0.0", "23.0.0"],
+    "apex" : {
+      "versions" : ["26.1.0"],
+      "plugin" : {
+        "internalName" : "COM.HASHAAM.IG_ATTACHMENTS",
+        "type" : "item",
+        "demo" : "https://oracleapex.com/ords/r/hashaam-admin/apex-plugins-by-hbs/ig-attachments",
+        "previewImage" : "https://raw.githubusercontent.com/HashaamShoukat/apex-plugin-ig-attachments/main/docs/images/panel.png"
+      }
+    }
+  }
+}

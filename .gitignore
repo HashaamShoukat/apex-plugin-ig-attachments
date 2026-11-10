@@ -1,0 +1,11 @@
+# local test output and builds
+qa/out/
+qa/failure.png
+releases/
+node_modules/
+plugin/export/
+# notes for the author's own sessions and old review material (not part of the plug-in)
+HANDOFF.md
+qa/review-*/
+qa/recheck-*/
+qa/*.png
