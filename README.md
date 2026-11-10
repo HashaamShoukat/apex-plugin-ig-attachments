@@ -134,10 +134,10 @@ The server enforces every limit again, whatever the browser does.
 - JavaScript: `igaAttachments.get("ATTACHMENT_EDIT").open()` opens the panel for the active row (the column's name or Static ID).
 - Colours come from the Universal Theme, including dark mode. The panel texts are English.
 - Browsers: Chrome / Edge 111, Firefox 113, Safari 16.2 or later (the stylesheet uses `color-mix()`). The plug-in files are minified (`#MIN#`); a debug session loads the plain ones.
+- The grid's Search field works as usual; the attachment column itself is not searched. If a search fails with ORA-00936 on APEX 26.1, the grid has no searchable column: at least one text column needs *Column Filter > Performance Impacting Operators* (Contains, Starts With, Case Insensitive). Page Designer ticks them by default; a grid written as APEXlang needs `columnFilter { performanceImpactingOperators: [ contains startsWith caseInsensitive ] }` on its text columns. This is unrelated to the plug-in.
 
 ## Not supported
 
-- **APEX 26.1.0: the grid's Search field (and a row filter from the Actions menu) fails with ORA-00936 when the grid has an item plug-in column** - any item plug-in, not only this one (reproduced with a second public plug-in). The search is saved in the user's report, so the region then fails on every page load until the report is reset. Until an APEX patch fixes it, remove *Search Field* (and *Search Column*) from the grid's Toolbar Controls if users must not hit it.
 - Grids whose source is a function returning SQL, a REST / remote source, or more than 32,000 characters of SQL: the server runs the grid query as an inline view to check that a row is in the user's grid.
 - A query using the `#OWNER#` substitution or other substitutions that only the region source resolves.
 - Grids on page 0, keys from ROWID, and composite primary keys (the column needs one primary key column).
