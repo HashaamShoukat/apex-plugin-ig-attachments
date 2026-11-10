@@ -137,6 +137,7 @@ The server enforces every limit again, whatever the browser does.
 
 ## Not supported
 
+- **APEX 26.1.0: the grid's Search field (and a row filter from the Actions menu) fails with ORA-00936 when the grid has an item plug-in column** - any item plug-in, not only this one (reproduced with a second public plug-in). The search is saved in the user's report, so the region then fails on every page load until the report is reset. Until an APEX patch fixes it, remove *Search Field* (and *Search Column*) from the grid's Toolbar Controls, as the demo page does.
 - Grids whose source is a function returning SQL, a REST / remote source, or more than 32,000 characters of SQL: the server runs the grid query as an inline view to check that a row is in the user's grid.
 - A query using the `#OWNER#` substitution or other substitutions that only the region source resolves.
 - Grids on page 0, keys from ROWID, and composite primary keys (the column needs one primary key column).
